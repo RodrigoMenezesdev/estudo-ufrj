@@ -1,0 +1,144 @@
+/* Configurações Gerais e Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Customização da Scrollbar (Barra de Rolagem) */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #002e5d;
+    border-radius: 10px;
+}
+
+/* Tipografia e Layout Base */
+body {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Estilização da Sidebar */
+.sidebar-title {
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #94a3b8; /* slate-400 */
+    margin-bottom: 0.75rem;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    padding: 0.6rem 0.75rem;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    transition: all 0.2s ease;
+    color: #e2e8f0; /* slate-200 */
+    text-decoration: none;
+}
+
+.nav-item span {
+    margin-right: 12px;
+    font-size: 1.1rem;
+}
+
+.nav-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fbbf24; /* yellow-400 */
+    transform: translateX(4px);
+}
+
+/* Estilização do Header Principal */
+.header-main {
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 1.5rem;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Card de Progresso */
+.progresso-card {
+    background: #002e5d;
+    color: #fbbf24;
+    padding: 0.75rem 1.5rem;
+    border-radius: 99px;
+    font-weight: 800;
+    box-shadow: 0 4px 15px rgba(0, 46, 93, 0.2);
+    font-size: 0.9rem;
+}
+
+/* Estilo do Checklist */
+.card-estudo {
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+}
+
+.checklist-subtitle {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    display: block;
+    border-left: 4px solid #002e5d;
+    padding-left: 10px;
+}
+
+.check-box {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    border: 1px solid #f1f5f9;
+    transition: background 0.2s;
+    cursor: pointer;
+}
+
+.check-box:hover {
+    background-color: #f8fafc;
+}
+
+.check-box input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin-right: 12px;
+    cursor: pointer;
+    accent-color: #002e5d;
+}
+
+.check-box span {
+    font-size: 0.9rem;
+    color: #475569;
+}
+
+/* Efeito de Tarefa Concluída */
+.check-box input:checked + span {
+    text-decoration: line-through;
+    color: #94a3b8;
+}
+
+/* Responsividade Mobile */
+@media (max-width: 768px) {
+    .header-main {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .card-estudo {
+        padding: 1.25rem;
+    }
+}

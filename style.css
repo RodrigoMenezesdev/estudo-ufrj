@@ -5,21 +5,18 @@
     box-sizing: border-box;
 }
 
-/* Customização da Scrollbar (Barra de Rolagem) */
+/* Customização da Scrollbar */
 ::-webkit-scrollbar {
     width: 6px;
 }
-
 ::-webkit-scrollbar-track {
     background: #f1f1f1;
 }
-
 ::-webkit-scrollbar-thumb {
     background: #002e5d;
     border-radius: 10px;
 }
 
-/* Tipografia e Layout Base */
 body {
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
@@ -31,7 +28,7 @@ body {
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    color: #94a3b8; /* slate-400 */
+    color: #94a3b8;
     margin-bottom: 0.75rem;
 }
 
@@ -42,7 +39,7 @@ body {
     border-radius: 0.5rem;
     font-size: 0.875rem;
     transition: all 0.2s ease;
-    color: #e2e8f0; /* slate-200 */
+    color: #e2e8f0;
     text-decoration: none;
 }
 
@@ -53,11 +50,11 @@ body {
 
 .nav-item:hover {
     background-color: rgba(255, 255, 255, 0.1);
-    color: #fbbf24; /* yellow-400 */
+    color: #fbbf24;
     transform: translateX(4px);
 }
 
-/* Estilização do Header Principal */
+/* Header */
 .header-main {
     border-bottom: 2px solid #e2e8f0;
     padding-bottom: 1.5rem;
@@ -67,7 +64,6 @@ body {
     align-items: center;
 }
 
-/* Card de Progresso */
 .progresso-card {
     background: #002e5d;
     color: #fbbf24;
@@ -78,7 +74,6 @@ body {
     font-size: 0.9rem;
 }
 
-/* Estilo do Checklist */
 .card-estudo {
     background: white;
     padding: 2rem;
@@ -107,9 +102,7 @@ body {
     cursor: pointer;
 }
 
-.check-box:hover {
-    background-color: #f8fafc;
-}
+.check-box:hover { background-color: #f8fafc; }
 
 .check-box input[type="checkbox"] {
     width: 18px;
@@ -124,7 +117,6 @@ body {
     color: #475569;
 }
 
-/* Efeito de Tarefa Concluída */
 .check-box input:checked + span {
     text-decoration: line-through;
     color: #94a3b8;
@@ -137,8 +129,10 @@ body {
         align-items: flex-start;
         gap: 1rem;
     }
+    .card-estudo { padding: 1.25rem; }
     
-    .card-estudo {
-        padding: 1.25rem;
+    /* Força o menu a ocupar a largura toda quando visível no celular */
+    #sidebar:not(.hidden) {
+        width: 100% !important;
     }
 }

@@ -10,205 +10,141 @@
 </head>
 <body class="bg-slate-50 font-sans text-slate-800">
 
-    <div class="flex h-screen overflow-hidden">
-        <aside class="w-80 bg-[#002E5D] text-white flex-shrink-0 hidden md:flex flex-col shadow-2xl">
+    <div class="md:hidden bg-[#002E5D] p-4 flex justify-between items-center text-white sticky top-0 z-50 shadow-md">
+        <h2 class="text-xl font-bold tracking-tighter text-yellow-400">UFRJ 2026</h2>
+        <button id="btnMenu" class="p-2 bg-blue-800 rounded-lg text-2xl focus:outline-none">☰</button>
+    </div>
+
+    <div class="flex h-screen overflow-hidden main-wrapper">
+        <aside id="sidebar" class="w-80 bg-[#002E5D] text-white flex-shrink-0 hidden md:flex flex-col shadow-2xl z-40">
             <div class="p-6 text-center border-b border-blue-800">
                 <h2 class="text-2xl font-black tracking-tighter text-yellow-400">UFRJ 2026</h2>
                 <p class="text-xs opacity-75 mt-1 tracking-widest">BANCA: SELECON</p>
             </div>
 
-            <nav class="flex-1 p-6 overflow-y-auto">
-                <div class="mb-8 px-2">
-                    <h1 class="text-lg font-bold leading-tight text-blue-100 border-l-4 border-yellow-400 pl-3">
-                        Administração Pública
-                    </h1>
-                </div>
-
+            <nav class="flex-1 p-6 overflow-y-auto custom-scrollbar">
+                
                 <p class="sidebar-title">📹 Videoaulas Selecon</p>
-                <div class="flex flex-col space-y-2">
-                    <a href="https://www.youtube.com/watch?v=EG514FTbjs8" target="_blank" class="nav-item"><span>📝</span> Simulado LAI (Questões)</a>
-                    <a href="https://www.youtube.com/live/oMRnm8BCISc" target="_blank" class="nav-item"><span>🔓</span> Lei 12.527 (Teoria LAI)</a>
-                    <a href="https://www.youtube.com/watch?v=e6Xy82Q7p8M" target="_blank" class="nav-item"><span>⚖️</span> Decreto 1.171 (Ética)</a>
-                    <a href="https://www.youtube.com/live/uY-YXKrgZyw" target="_blank" class="nav-item"><span>🚫</span> Lei 8.429 (Improbidade)</a>
-                    <a href="https://www.youtube.com/live/P-d1bGhixDA" target="_blank" class="nav-item"><span>📋</span> Lei 9.784 (Processo)</a>
-                    <a href="https://www.youtube.com/live/s9xUWLGJ0Bw" target="_blank" class="nav-item"><span>🏛️</span> Org. do Estado (CF)</a>
+                <div class="flex flex-col space-y-1 mb-6">
+                    <a href="https://www.youtube.com/watch?v=EG514FTbjs8" target="_blank" class="nav-item"><span>📝</span> Simulado LAI</a>
+                    <a href="https://www.youtube.com/live/oMRnm8BCISc" target="_blank" class="nav-item"><span>🔓</span> Lei 12.527 (LAI)</a>
+                    <a href="https://www.youtube.com/watch?v=e6Xy82Q7p8M" target="_blank" class="nav-item"><span>⚖️</span> Decreto 1.171</a>
+                    <a href="https://www.youtube.com/live/uY-YXKrgZyw" target="_blank" class="nav-item"><span>🚫</span> Lei 8.429</a>
+                    <a href="https://www.youtube.com/live/P-d1bGhixDA" target="_blank" class="nav-item"><span>📋</span> Lei 9.784</a>
+                    <a href="https://www.youtube.com/live/s9xUWLGJ0Bw" target="_blank" class="nav-item"><span>🏛️</span> Org. do Estado</a>
                     <a href="https://www.youtube.com/live/TYpATCXkJII" target="_blank" class="nav-item"><span>✡️</span> Princípios (CF)</a>
-                    <a href="https://www.youtube.com/live/hoXvECiKQ7E" target="_blank" class="nav-item"><span>▶️</span> Lei 8.112 (Estatuto)</a>
+                    <a href="https://www.youtube.com/live/hoXvECiKQ7E" target="_blank" class="nav-item"><span>▶️</span> Lei 8.112</a>
                 </div>
 
-                <p class="sidebar-title mt-8 text-yellow-200">📚 Conhecimentos Gerais</p>
-                <div class="flex flex-col space-y-2">
-                    <p class="text-xs font-bold text-blue-300 uppercase tracking-wider mt-2">Redação Oficial</p>
-                    <a href="https://www.youtube.com/live/VISNlsOGdxU" target="_blank" class="nav-item text-blue-100 text-sm"><span>✍️</span> Aula 01</a>
-                    <a href="https://www.youtube.com/live/uwU3zgkeG14" target="_blank" class="nav-item text-blue-100 text-sm"><span>💡</span> Aula 02</a>
-                    <a href="https://www.youtube.com/live/PU0016nQ2js" target="_blank" class="nav-item text-blue-100 text-sm"><span>🔗</span> Aula 03</a>
-                    <a href="https://www.youtube.com/live/_508za7muok" target="_blank" class="nav-item text-gray-300 text-sm hover:text-white"><span>✍️</span> Redação Teoria e Questões</a>
-                    <a href="https://www.youtube.com/watch?v=QEKV2IL7yq8" target="_blank" class="nav-item text-blue-100 text-sm"><span>🏆</span> Revisão Geral</a>
+                <p class="sidebar-title text-yellow-200">📚 Conhecimentos Gerais</p>
+                <div class="flex flex-col space-y-1 mb-6">
+                    <span class="text-[10px] font-bold text-blue-300 uppercase pl-2">Redação Oficial</span>
+                    <a href="https://www.youtube.com/live/VISNlsOGdxU" target="_blank" class="nav-item text-xs"><span>✍️</span> Aula 01</a>
+                    <a href="https://www.youtube.com/live/uwU3zgkeG14" target="_blank" class="nav-item text-xs"><span>💡</span> Aula 02</a>
+                    <a href="https://www.youtube.com/live/PU0016nQ2js" target="_blank" class="nav-item text-xs"><span>🔗</span> Aula 03</a>
+                    <a href="https://www.youtube.com/live/_508za7muok" target="_blank" class="nav-item text-xs"><span>✍️</span> Redação Teoria/Questões</a>
+                    <a href="https://www.youtube.com/watch?v=QEKV2IL7yq8" target="_blank" class="nav-item text-xs"><span>🏆</span> Revisão Geral</a>
 
-                    <p class="text-xs font-bold text-blue-300 uppercase tracking-wider mt-4">Legislação</p>
-                    <a href="https://www.youtube.com/live/tr07hedTn9c" target="_blank" class="nav-item text-blue-100 text-sm"><span>⚖️</span> Igualdade Racial</a>
-                    <a href="https://www.youtube.com/live/7jGD89skmE8" target="_blank" class="nav-item text-blue-100 text-sm"><span>🛡️</span> Prevenção ao Assédio</a>
-                    <a href="https://www.youtube.com/watch?v=i7i9c84ICHo" target="_blank" class="nav-item text-blue-100 text-sm"><span>♿</span> Pessoa com Deficiência</a>
-                    <a href="https://www.youtube.com/live/y55xUYJpqWI" target="_blank" class="nav-item text-blue-100 text-sm"><span>📝</span> Políticas Públicas</a>
+                    <span class="text-[10px] font-bold text-blue-300 uppercase mt-2 pl-2">Legislação</span>
+                    <a href="https://www.youtube.com/live/tr07hedTn9c" target="_blank" class="nav-item text-xs"><span>⚖️</span> Igualdade Racial</a>
+                    <a href="https://www.youtube.com/live/7jGD89skmE8" target="_blank" class="nav-item text-xs"><span>🛡️</span> Prevenção Assédio</a>
+                    <a href="https://www.youtube.com/watch?v=i7i9c84ICHo" target="_blank" class="nav-item text-xs"><span>♿</span> Pessoa com Deficiência</a>
+                    <a href="https://www.youtube.com/live/y55xUYJpqWI" target="_blank" class="nav-item text-xs"><span>📝</span> Políticas Públicas</a>
                 </div>
 
-                <p class="text-xs font-bold text-blue-300 uppercase tracking-wider mt-4">Informática</p>
-                <div class="flex flex-col space-y-2">
-                    <a href="https://www.youtube.com/watch?v=XVBZFEx7vR4" target="_blank" class="nav-item text-sm"><span>💻</span> Windows e Linux</a>
-                    <a href="https://www.youtube.com/watch?v=sYf0qwi1umQ" target="_blank" class="nav-item text-sm"><span>📝</span> Simulado 01</a>
-                    <a href="https://www.youtube.com/watch?v=Fhm2UboYuXI" target="_blank" class="nav-item text-sm"><span>📄</span> MS Office</a>
-                    <a href="https://youtu.be/G8twv6vSsXU" target="_blank" class="nav-item text-sm"><span>🌐</span> Redes e Internet</a>
-                    <a href="https://youtu.be/X2wgk02Bqt0" target="_blank" class="nav-item text-sm"><span>🛡️</span> Seg. da Informação</a>
-                    <a href="https://youtu.be/k7vK0JTfTEA" target="_blank" class="nav-item text-sm"><span>🌍</span> Navegadores</a>
-                    <a href="https://www.youtube.com/live/IfmYtEDU6Ts" target="_blank" class="nav-item text-sm"><span>⚙️</span> SOUGOV/Frequência</a>
+                <p class="sidebar-title text-blue-300">💻 Informática</p>
+                <div class="flex flex-col space-y-1 mb-6">
+                    <a href="https://www.youtube.com/watch?v=XVBZFEx7vR4" target="_blank" class="nav-item text-xs"><span>🖥️</span> Windows e Linux</a>
+                    <a href="https://www.youtube.com/watch?v=sYf0qwi1umQ" target="_blank" class="nav-item text-xs"><span>📝</span> Simulado 01</a>
+                    <a href="https://www.youtube.com/watch?v=Fhm2UboYuXI" target="_blank" class="nav-item text-xs"><span>📄</span> MS Office</a>
+                    <a href="https://youtu.be/G8twv6vSsXU" target="_blank" class="nav-item text-xs"><span>🌐</span> Redes e Internet</a>
+                    <a href="https://youtu.be/X2wgk02Bqt0" target="_blank" class="nav-item text-xs"><span>🛡️</span> Seg. Informação</a>
+                    <a href="https://youtu.be/k7vK0JTfTEA" target="_blank" class="nav-item text-xs"><span>🌍</span> Navegadores</a>
+                    <a href="https://www.youtube.com/live/IfmYtEDU6Ts" target="_blank" class="nav-item text-xs"><span>⚙️</span> SOUGOV/Frequência</a>
                 </div>
 
-                <p class="text-xs font-bold text-blue-300 uppercase tracking-wider mt-4">Noções de Administração</p>
-                <div class="flex flex-col space-y-2">
-                    <a href="https://www.youtube.com/live/qre9HswSH4M" target="_blank" class="nav-item text-sm"><span>📦</span> Gestão de Materiais</a>
+                <p class="sidebar-title text-orange-400">🏗️ Específicos</p>
+                <div class="flex flex-col space-y-1 mb-6">
+                    <a href="https://www.youtube.com/live/qre9HswSH4M" target="_blank" class="nav-item text-xs"><span>📦</span> Gestão de Materiais</a>
+                    <a href="https://youtu.be/jEpW5XK-iJ4" target="_blank" class="nav-item text-xs"><span>🏛️</span> TGA</a>
+                    <a href="https://www.youtube.com/live/LuHPtXmjbjQ" target="_blank" class="nav-item text-xs"><span>👥</span> Comportamento Org.</a>
+                    <a href="https://www.youtube.com/watch?v=v0zpWIKdgsI" target="_blank" class="nav-item text-xs"><span>🤝</span> Gestão de Pessoas</a>
+                    <a href="https://www.youtube.com/live/RkzuHeQlNck" target="_blank" class="nav-item text-xs"><span>💰</span> AFO 2025/2026</a>
+                    <a href="https://www.youtube.com/live/n4TJYVgQtR8" target="_blank" class="nav-item text-xs"><span>📁</span> Arquivologia</a>
                 </div>
 
-                <p class="text-xs font-bold text-orange-500 uppercase tracking-wider mt-4">Conhecimentos Específicos</p>
-                <div class="flex flex-col space-y-2">
-                    <a href="https://youtu.be/jEpW5XK-iJ4" target="_blank" class="nav-item text-sm"><span>🏛️</span> TGA</a>
-                    <a href="https://www.youtube.com/live/LuHPtXmjbjQ" target="_blank" class="nav-item text-sm"><span>👥</span> Comportamento Org.</a>
-                    <a href="https://www.youtube.com/watch?v=v0zpWIKdgsI" target="_blank" class="nav-item text-sm"><span>🤝</span> Gestão de Pessoas</a>
-                    <a href="https://www.youtube.com/live/RkzuHeQlNck" target="_blank" class="nav-item text-sm"><span>💰</span> AFO 2025/2026</a>
-                    <a href="https://www.youtube.com/live/n4TJYVgQtR8" target="_blank" class="nav-item text-sm"><span>📁</span> Arquivologia</a>
+                <p class="sidebar-title text-green-400">📝 Provas em PDF</p>
+                <div class="flex flex-col space-y-4 mb-6">
+                    <div class="flex flex-col border-l border-blue-800 pl-2">
+                        <a href="materias/provas/assistente_administrativo_niteroi.pdf" target="_blank" class="text-xs hover:text-yellow-400 block py-1">📄 Prova: Niterói</a>
+                        <a href="materias/provas/gabarito_definitivo_niteroi.pdf" target="_blank" class="text-[10px] text-gray-500 block ml-4">└ Gabarito Definitivo</a>
+                    </div>
+                    <div class="flex flex-col border-l border-blue-800 pl-2">
+                        <a href="materias/provas/assistente_em_administracao_ufrj.pdf" target="_blank" class="text-xs hover:text-yellow-400 block py-1">📄 Prova: UFRJ</a>
+                        <a href="materias/provas/gabarito_definitivo_ufrj.pdf" target="_blank" class="text-[10px] text-gray-500 block ml-4">└ Gabarito Definitivo</a>
+                    </div>
+                    <div class="flex flex-col border-l border-blue-800 pl-2">
+                        <a href="materias/provas/assistente_em_administracao_2023.pdf" target="_blank" class="text-xs hover:text-yellow-400 block py-1">📄 Prova: 2023</a>
+                        <a href="materias/provas/gabaritos_preliminares_2023.pdf" target="_blank" class="text-[10px] text-gray-500 block ml-4">└ Gabarito Preliminar</a>
+                    </div>
+                    <div class="flex flex-col border-l border-blue-800 pl-2">
+                        <a href="materias/provas/questionario_100_questoes.pdf" target="_blank" class="text-xs hover:text-yellow-400 block py-1">📄 100 Questões</a>
+                        <a href="materias/provas/gabarito_100_questoes.pdf" target="_blank" class="text-[10px] text-gray-500 block ml-4">└ Gabarito 100 Q</a>
+                    </div>
+                    <div class="flex flex-col border-l border-blue-800 pl-2">
+                        <a href="materias/provas/Questões de Redação Oficial.pdf" target="_blank" class="text-xs hover:text-yellow-400 block py-1">📄 Questões Redação Ofic.</a>
+                        <a href="materias/provas/Gabarito Redação Oficial Selecon.pdf" target="_blank" class="text-[10px] text-gray-500 block ml-4">└ Gabarito Redação</a>
+                    </div>
                 </div>
-
-                <p class="sidebar-title mt-8">📝 Simulados Interativos</p>
-                <div class="flex flex-col space-y-2">
-                    <a href="https://rodrigomenezesdev.github.io/ufrj-informatica01/" target="_blank" class="nav-item text-green-400"><span>⌨️</span> Quiz 01</a>
-                    <a href="https://rodrigomenezesdev.github.io/Ufrj_informatica02/" target="_blank" class="nav-item text-green-400"><span>⌨️</span> Quiz 02</a>
-                </div>
-
-                <p class="text-xs font-bold text-green-400 uppercase tracking-wider mt-6">Provas Anteriores (PDF)</p>
-<div class="flex flex-col space-y-2 mt-2">
-
-    <div class="flex flex-col">
-        <a href="materias/provas/assistente_administrativo_niteroi.pdf" target="_blank"
-            class="nav-item text-gray-300 text-sm hover:text-white flex items-center space-x-2">
-            <span>📝</span>
-            <span>Prova: Assistente Adm. (Niterói)</span>
-        </a>
-        <a href="materias/provas/gabarito_definitivo_niteroi.pdf" target="_blank"
-            class="text-gray-500 text-xs hover:text-blue-300 ml-7 py-1">
-            └ Gabarito Definitivo
-        </a>
-    </div>
-
-    <div class="flex flex-col mt-1">
-        <a href="materias/provas/assistente_em_administracao_ufrj.pdf" target="_blank"
-            class="nav-item text-gray-300 text-sm hover:text-white flex items-center space-x-2">
-            <span>📝</span>
-            <span>Prova: Assistente em Adm. (UFRJ)</span>
-        </a>
-        <a href="materias/provas/gabarito_definitivo_ufrj.pdf" target="_blank"
-            class="text-gray-500 text-xs hover:text-blue-300 ml-7 py-1">
-            └ Gabarito Definitivo
-        </a>
-    </div>
-
-    <div class="flex flex-col mt-1">
-        <a href="materias/provas/assistente_em_administracao_2023.pdf" target="_blank"
-            class="nav-item text-gray-300 text-sm hover:text-white flex items-center space-x-2">
-            <span>📝</span>
-            <span>Prova: Assistente em Adm. (2023)</span>
-        </a>
-        <a href="materias/provas/gabaritos_preliminares_2023.pdf" target="_blank"
-            class="text-gray-500 text-xs hover:text-blue-300 ml-7 py-1">
-            └ Gabaritos Preliminares
-        </a>
-    </div>
-
-    <div class="flex flex-col mt-1">
-        <a href="materias/provas/questionario_100_questoes.pdf" target="_blank"
-            class="nav-item text-gray-300 text-sm hover:text-white flex items-center space-x-2">
-            <span>📝</span>
-            <span>Questionário: 100 Questões</span>
-        </a>
-        <a href="materias/provas/gabarito_100_questoes.pdf" target="_blank"
-            class="text-gray-500 text-xs hover:text-blue-300 ml-7 py-1">
-            └ Gabarito 100 Questões
-        </a>
-    </div>
-
-    <div class="flex flex-col mt-1">
-        <a href="materias/provas/Questões de Redação Oficial.pdf" target="_blank"
-            class="nav-item text-gray-300 text-sm hover:text-white flex items-center space-x-2">
-            <span>📝</span>
-            <span>Questões: Redação Oficial</span>
-        </a>
-        <a href="materias/provas/Gabarito Redação Oficial Selecon.pdf" target="_blank"
-            class="text-gray-500 text-xs hover:text-blue-300 ml-7 py-1">
-            └ Gabarito Redação Oficial
-        </a>
-    </div>
-
-</div>
+            </nav>
         </aside>
 
         <main class="flex-1 overflow-y-auto p-6 md:p-12">
             <header class="header-main flex justify-between items-center mb-10">
                 <div>
                     <h2 class="text-2xl font-extrabold text-[#002E5D]">Área de Estudo</h2>
-                    <p class="text-slate-500">Rodrigo Morais | Foco UFRJ</p>
+                    <p class="text-slate-500 text-sm">Rodrigo Morais | Foco UFRJ</p>
                 </div>
-                <div id="status-progresso" class="progresso-card">Progresso: 0%</div>
+                <div id="status-progresso" class="progresso-card">0%</div>
             </header>
 
             <section class="card-estudo">
                 <h2 class="text-xl font-bold mb-6 text-[#002E5D] flex items-center">
-                    <span class="mr-2">✅</span> Checklist de Conteúdo
+                    <span class="mr-2">✅</span> Checklist de Estudo
                 </h2>
 
-                <h3 class="checklist-subtitle">Administração Pública</h3>
-                <div class="flex flex-col space-y-1 mb-8">
-                    <label class="check-box"><input type="checkbox" class="task"> <span>Simulado LAI</span></label>
-                    <label class="check-box"><input type="checkbox" class="task"> <span>Lei 12.527 (LAI)</span></label>
-                    <label class="check-box"><input type="checkbox" class="task"> <span>Decreto 1.171 (Ética)</span></label>
-                    <label class="check-box"><input type="checkbox" class="task"> <span>Lei 8.429 (Improbidade)</span></label>
-                    <label class="check-box"><input type="checkbox" class="task"> <span>Lei 9.784 (Processo)</span></label>
-                    <label class="check-box"><input type="checkbox" class="task"> <span>Org. Estado e Princípios (CF)</span></label>
-                    <label class="check-box"><input type="checkbox" class="task"> <span>Lei 8.112 (Estatuto)</span></label>
-                </div>
+                <div class="space-y-8">
+                    <div>
+                        <h3 class="checklist-subtitle">Administração Pública e Legislação</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-2 mt-2">
+                            <label class="check-box"><input type="checkbox" class="task"> <span>Lei 12.527 (LAI)</span></label>
+                            <label class="check-box"><input type="checkbox" class="task"> <span>Decreto 1.171 (Ética)</span></label>
+                            <label class="check-box"><input type="checkbox" class="task"> <span>Lei 8.429 (Improbidade)</span></label>
+                            <label class="check-box"><input type="checkbox" class="task"> <span>Lei 9.784 (Processo)</span></label>
+                            <label class="check-box"><input type="checkbox" class="task"> <span>Lei 8.112 (Estatuto)</span></label>
+                            <label class="check-box"><input type="checkbox" class="task"> <span>Igualdade Racial / PCD</span></label>
+                        </div>
+                    </div>
 
-                <h3 class="checklist-subtitle">Redação Oficial e Legislação</h3>
-                <div class="flex flex-col space-y-1 mb-8">
-                    <label class="check-box"><input type="checkbox" class="task"> <span>Definição e Atributos [00:12:44]</span></label>
-                    <label class="check-box"><input type="checkbox" class="task"> <span>Clareza e Precisão [00:15:46]</span></label>
-                    <label class="check-box"><input type="checkbox" class="task"> <span>Uso de Estrangeirismos [00:26:26]</span></label>
-                    <label class="check-box"><input type="checkbox" class="task"> <span>Ordem Direta [03:11:59]</span></label>
-                    <label class="check-box"><input type="checkbox" class="task"> <span>Igualdade Racial (Lei 12.288)</span></label>
-                    <label class="check-box"><input type="checkbox" class="task"> <span>Assédio (Portaria 6.719)</span></label>
-                    <label class="check-box"><input type="checkbox" class="task"> <span>PCD (Lei 13.146)</span></label>
-                </div>
+                    <div>
+                        <h3 class="checklist-subtitle">Redação Oficial e Informática</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-2 mt-2">
+                            <label class="check-box"><input type="checkbox" class="task"> <span>Atributos da Redação</span></label>
+                            <label class="check-box"><input type="checkbox" class="task"> <span>Windows e Linux</span></label>
+                            <label class="check-box"><input type="checkbox" class="task"> <span>Pacote Office (Word/Excel)</span></label>
+                            <label class="check-box"><input type="checkbox" class="task"> <span>Segurança e Redes</span></label>
+                        </div>
+                    </div>
 
-                <h3 class="checklist-subtitle bg-orange-100 p-2 rounded text-orange-800">Informática Profissional</h3>
-                <div class="flex flex-col space-y-1 mb-8">
-                    <label class="check-box"><input type="checkbox" class="task"> <span>Windows e Linux</span></label>
-                    <label class="check-box"><input type="checkbox" class="task"> <span>Office: Word e Excel</span></label>
-                    <label class="check-box"><input type="checkbox" class="task"> <span>Redes e Protocolos</span></label>
-                    <label class="check-box"><input type="checkbox" class="task"> <span>Segurança e Backups</span></label>
-                    <label class="check-box"><input type="checkbox" class="task"> <span>SOUGOV e Frequência</span></label>
-                </div>
-
-                <h3 class="checklist-subtitle bg-blue-100 p-2 rounded text-blue-800">Gestão de Materiais e TGA</h3>
-                <div class="flex flex-col space-y-1 mb-8">
-                    <label class="check-box"><input type="checkbox" class="task"> <span>Classificação de Estoque e LEC</span></label>
-                    <label class="check-box"><input type="checkbox" class="task"> <span>Just-in-Time e MRP</span></label>
-                    <label class="check-box"><input type="checkbox" class="task"> <span>Taylor (Adm. Científica)</span></label>
-                    <label class="check-box"><input type="checkbox" class="task"> <span>Fayol (Teoria Clássica)</span></label>
-                    <label class="check-box"><input type="checkbox" class="task"> <span>Weber (Burocracia)</span></label>
-                </div>
-
-                <h3 class="checklist-subtitle bg-green-100 p-2 rounded text-green-800">RH, AFO e Arquivologia</h3>
-                <div class="flex flex-col space-y-1">
-                    <label class="check-box"><input type="checkbox" class="task"> <span>Motivação: Maslow, Herzberg e McClelland</span></label>
-                    <label class="check-box"><input type="checkbox" class="task"> <span>Processos de RH e Gestão por Competências (CHA)</span></label>
-                    <label class="check-box"><input type="checkbox" class="task"> <span>AFO: Ciclo Orçamentário e Emendas 2025</span></label>
-                    <label class="check-box"><input type="checkbox" class="task"> <span>Arquivologia: Ciclo Vital e Princípios</span></label>
+                    <div>
+                        <h3 class="checklist-subtitle">Conhecimentos Específicos</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-2 mt-2">
+                            <label class="check-box"><input type="checkbox" class="task"> <span>Gestão de Materiais</span></label>
+                            <label class="check-box"><input type="checkbox" class="task"> <span>Arquivologia (Ciclo Vital)</span></label>
+                            <label class="check-box"><input type="checkbox" class="task"> <span>AFO (Orçamento Público)</span></label>
+                            <label class="check-box"><input type="checkbox" class="task"> <span>TGA e Gestão de Pessoas</span></label>
+                        </div>
+                    </div>
                 </div>
             </section>
         </main>

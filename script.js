@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Muda a cor para verde quando termina tudo
         if (percentagem === 100) {
             displayProgresso.style.background = "#10b981"; // Verde
-            displayProgresso.style.color = "#white";
+            displayProgresso.style.color = "white";
         } else {
             displayProgresso.style.background = "#002E5D"; // Azul Original
             displayProgresso.style.color = "#fbbf24"; // Amarelo
@@ -26,7 +26,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Carregar progresso salvo e configurar cliques
     checkboxes.forEach((cb, index) => {
-        // Carrega do LocalStorage usando um ID único para cada item
         const checkSalvo = localStorage.getItem('ufrj-2026-check-' + index);
         if (checkSalvo === 'true') cb.checked = true;
 
@@ -36,21 +35,18 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Inicializa o cálculo ao abrir a página
     calcularProgresso();
 
     // ==========================================
     // 2. LÓGICA DO MENU MOBILE (ABRIR/FECHAR)
     // ==========================================
     if (btnMenu && sidebar) {
-        // Abrir/Fechar ao clicar no botão hambúrguer
         btnMenu.addEventListener('click', (e) => {
-            e.stopPropagation(); // Evita fechar imediatamente
+            e.stopPropagation();
             sidebar.classList.toggle('hidden');
             sidebar.classList.toggle('show');
         });
 
-        // Fechar o menu ao clicar em qualquer link (Vídeos ou PDFs)
         const linksMenu = sidebar.querySelectorAll('a');
         linksMenu.forEach(link => {
             link.addEventListener('click', () => {
@@ -61,7 +57,6 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
-        // Fechar o menu ao clicar fora dele (na área escura)
         document.addEventListener('click', (e) => {
             if (window.innerWidth < 768 && 
                 !sidebar.contains(e.target) && 

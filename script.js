@@ -1,54 +1,76 @@
 document.addEventListener('DOMContentLoaded', () => {
     const checkboxes = document.querySelectorAll('.task');
     const displayProgresso = document.getElementById('status-progresso');
+    const btnMenu = document.getElementById('btnMenu');
+    const sidebar = document.getElementById('sidebar');
 
+    // ==========================================
+    // 1. LÓGICA DE PROGRESSO (CHECKLIST)
+    // ==========================================
     function calcularProgresso() {
         const total = checkboxes.length;
         const concluidos = Array.from(checkboxes).filter(cb => cb.checked).length;
         const percentagem = total > 0 ? Math.round((concluidos / total) * 100) : 0;
         
         displayProgresso.innerText = `Progresso: ${percentagem}%`;
-
+        
+        // Muda a cor para verde quando termina tudo
         if (percentagem === 100) {
-            displayProgresso.style.color = "#10b981";
+            displayProgresso.style.background = "#10b981"; // Verde
+            displayProgresso.style.color = "#white";
         } else {
-            displayProgresso.style.color = "#FF8C00";
+            displayProgresso.style.background = "#002E5D"; // Azul Original
+            displayProgresso.style.color = "#fbbf24"; // Amarelo
         }
     }
 
+    // Carregar progresso salvo e configurar cliques
     checkboxes.forEach((cb, index) => {
-        const checkSalvo = localStorage.getItem('ufrj-selecon-' + index);
-        if (checkSalvo === 'true') {
-            cb.checked = true;
-        }
+        // Carrega do LocalStorage usando um ID único para cada item
+        const checkSalvo = localStorage.getItem('ufrj-2026-check-' + index);
+        if (checkSalvo === 'true') cb.checked = true;
 
         cb.addEventListener('change', () => {
-            localStorage.setItem('ufrj-selecon-' + index, cb.checked);
+            localStorage.setItem('ufrj-2026-check-' + index, cb.checked);
             calcularProgresso();
         });
     });
 
+    // Inicializa o cálculo ao abrir a página
     calcularProgresso();
 
-    // --- ADIÇÃO: LÓGICA DO MENU MOBILE ---
-    const btnMenu = document.getElementById('btnMenu');
-    const sidebar = document.getElementById('sidebar');
-
-    if(btnMenu && sidebar) {
-        btnMenu.addEventListener('click', () => {
+    // ==========================================
+    // 2. LÓGICA DO MENU MOBILE (ABRIR/FECHAR)
+    // ==========================================
+    if (btnMenu && sidebar) {
+        // Abrir/Fechar ao clicar no botão hambúrguer
+        btnMenu.addEventListener('click', (e) => {
+            e.stopPropagation(); // Evita fechar imediatamente
             sidebar.classList.toggle('hidden');
-            sidebar.classList.toggle('flex');
+            sidebar.classList.toggle('show');
         });
 
-        // Fecha o menu ao clicar em qualquer link (no mobile)
-        const navLinks = sidebar.querySelectorAll('.nav-item');
-        navLinks.forEach(link => {
+        // Fechar o menu ao clicar em qualquer link (Vídeos ou PDFs)
+        const linksMenu = sidebar.querySelectorAll('a');
+        linksMenu.forEach(link => {
             link.addEventListener('click', () => {
                 if (window.innerWidth < 768) {
-                    sidebar.classList.add('hidden');
-                    sidebar.classList.remove('flex');
+                    sidebar.classList.remove('show');
+                    setTimeout(() => sidebar.classList.add('hidden'), 300);
                 }
             });
+        });
+
+        // Fechar o menu ao clicar fora dele (na área escura)
+        document.addEventListener('click', (e) => {
+            if (window.innerWidth < 768 && 
+                !sidebar.contains(e.target) && 
+                !btnMenu.contains(e.target) &&
+                sidebar.classList.contains('show')) {
+                
+                sidebar.classList.remove('show');
+                setTimeout(() => sidebar.classList.add('hidden'), 300);
+            }
         });
     }
 });

@@ -144,3 +144,58 @@ body {
 
 .custom-scrollbar::-webkit-scrollbar { width: 4px; }
 .custom-scrollbar::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); }
+/* Configuração Principal do Rodapé */
+.rodape {
+    background-color: #0056b3; /* Azul padrão do projeto */
+    color: white;              /* Texto branco para contrastar com o azul */
+    padding: 30px 0;
+    margin-top: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.rodape-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 0 20px;
+}
+
+.contatos {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.instagram-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+/* Efeito ao passar o mouse */
+.instagram-link:hover {
+    color: #ffd700; /* Texto muda para dourado/amarelo ao passar o mouse, combina bem com azul */
+    transform: translateY(-2px);
+}
+
+.icon-instagram {
+    width: 24px;
+    height: 24px;
+    border-radius: 5px;
+    background-color: white; 
+    padding: 2px;
+}
+
+/* Ajuste para telas menores (Responsividade) */
+@media (max-width: 600px) {
+    .rodape-container {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+}

@@ -20,25 +20,40 @@ body {
     overflow: hidden;
 }
 
-/* BARRA DE ROLAGEM DIREITA (AZUL) */
-::-webkit-scrollbar {
-    width: 6px;
+/* --- CONFIGURAÇÃO DAS BARRAS DE ROLAGEM --- */
+
+/* 1. Barra Principal (Direita) - Sempre Azul */
+body::-webkit-scrollbar {
+    width: 8px;
 }
-::-webkit-scrollbar-thumb {
-    background: var(--primary-blue);
+
+body::-webkit-scrollbar-thumb {
+    background-color: var(--primary-blue);
     border-radius: 10px;
 }
 
-/* BARRA DE ROLAGEM ESQUERDA/INTERNA (DOURADA) */
-.custom-scrollbar::-webkit-scrollbar { 
-    width: 4px; 
+/* 2. Barras Internas/Sidebar (Esquerda) - Dourada */
+*::-webkit-scrollbar {
+    width: 5px;
 }
-.custom-scrollbar::-webkit-scrollbar-thumb { 
-    background: var(--accent-yellow); 
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--accent-yellow) !important;
     border-radius: 10px;
 }
 
-/* RESTANTE DO SEU CÓDIGO ORIGINAL */
+/* Efeito Hover na barra dourada */
+*::-webkit-scrollbar-thumb:hover {
+    background-color: #eab308 !important; /* Dourado mais escuro */
+}
+
+/* Garante que o hover do body não fique dourado */
+body::-webkit-scrollbar-thumb:hover {
+    background-color: var(--secondary-blue);
+}
+
+/* --- RESTANTE DO CÓDIGO --- */
+
 .sidebar-title {
     font-size: 0.65rem;
     font-weight: 800;
@@ -150,7 +165,6 @@ body {
     .header-main { flex-direction: column; align-items: flex-start; gap: 1rem; }
 }
 
-/* Configuração Principal do Rodapé */
 .rodape {
     background-color: #0056b3; 
     color: white;              
